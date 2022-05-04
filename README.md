@@ -165,7 +165,7 @@ JobManager会负责所有需要中央协调的操作，比如说检查点(checkp
 ![img_3.png](img_3.png)
 ![img_5.png](img_5.png)
 ### 任务调度原理  
-![img_7.png](img_7.png)
+![img_7.png](img_6.png)
 
 
 
