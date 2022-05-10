@@ -34,6 +34,7 @@ public class TransformTest4_MultipleStream {
         DataStream<SensorReading> high = splitDataStream.select("high");
         DataStream<SensorReading> low = splitDataStream.select("low");
 
+        //connect可以合并两条流，数据类型可以不一样
         ConnectedStreams<SensorReading, SensorReading> connect = high.connect(low);
         SingleOutputStreamOperator<Tuple2> map = connect.map(new CoMapFunction<SensorReading, SensorReading, Tuple2>() {
             @Override
@@ -46,6 +47,8 @@ public class TransformTest4_MultipleStream {
                 return new Tuple2(value.getId(), value.getTemperature());
             }
         });
+
+        //union 联合多条流。数据类型要一致
 
         high.print();
         low.print();
