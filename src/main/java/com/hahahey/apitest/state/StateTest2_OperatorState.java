@@ -15,7 +15,7 @@ import java.util.List;
  * @author hahahey
  * @date 2022-05-25 23:16
  */
-public class StateTest1_OperatorState {
+public class StateTest2_OperatorState {
     public static void main(String[] args) throws Exception{
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
@@ -33,7 +33,7 @@ public class StateTest1_OperatorState {
         });
 
 
-//        //根据传入的数据来巨鹿状态
+//        //根据传入的数据来记录状态
 //        SingleOutputStreamOperator<Integer> map = mapDataStream.map(new MapFunction<SensorReading, Integer>() {
 //            Integer count = 0;
 //
