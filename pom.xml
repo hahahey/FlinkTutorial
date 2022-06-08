@@ -49,6 +49,12 @@
         </dependency>
 
         <dependency>
+            <groupId>org.apache.flink</groupId>
+            <artifactId>flink-table-planner_2.12</artifactId>
+            <version>1.10.1</version>
+        </dependency>
+
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.46</version>
@@ -72,6 +78,9 @@
             <version>1.2.17</version>
             <scope>runtime</scope>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
