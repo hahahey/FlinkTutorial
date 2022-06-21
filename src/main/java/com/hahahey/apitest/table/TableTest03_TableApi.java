@@ -1,6 +1,5 @@
 package com.hahahey.apitest.table;
 
-import com.sun.prism.PixelFormat;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 import org.apache.flink.table.api.DataTypes;
 import org.apache.flink.table.api.Table;
@@ -15,7 +14,7 @@ import org.apache.flink.types.Row;
  * @date 2022-06-14 23:17
  */
 public class TableTest03_TableApi {
-    public static void main(String[] args) throws Exception{
+    public static void main(String[] args) throws Exception {
         StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
         env.setParallelism(1);
 
@@ -45,10 +44,8 @@ public class TableTest03_TableApi {
         Table selectTable = tableEnvironment.sqlQuery("select id,count(id) as cnt,avg(temp) as avgTemp from tempTable where id = '10004' group by id");
 
         //打印输出
-        tableEnvironment.toRetractStream(filterTable,Row.class).print("api");
-        tableEnvironment.toRetractStream(selectTable,Row.class).print("sql");
-
-
+        tableEnvironment.toRetractStream(filterTable, Row.class).print("api");
+        tableEnvironment.toRetractStream(selectTable, Row.class).print("sql");
 
 
         //输出到文件
